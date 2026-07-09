@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #e8f4fb 0%, #b3d9f2 50%, #e8f4fb 100%);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Fondo animado con burbujas de lavandería */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(100, 200, 255, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 80% 80%, rgba(0, 100, 200, 0.08) 1.5px, transparent 1.5px),
+    radial-gradient(circle at 50% 50%, rgba(100, 200, 255, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 30% 70%, rgba(0, 100, 200, 0.1) 1.2px, transparent 1.2px),
+    radial-gradient(circle at 90% 10%, rgba(100, 200, 255, 0.09) 1.5px, transparent 1.5px);
+  background-size: 200% 200%, 150% 150%, 180% 180%, 160% 160%, 190% 190%;
+  background-position: 0% 0%, 50% 50%, 25% 75%, 75% 25%, 100% 0%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Títulos principales con fuente elegante */
+h1, h2 {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  background: linear-gradient(135deg, #0057b8 0%, #0080d0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+h3 {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+  color: #0057b8;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+input, textarea, select {
+  font-family: inherit;
+}

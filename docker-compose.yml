@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  lavanderia:
+    build: .
+    container_name: lavanderia-el-fenix
+    ports:
+      - "3001:3001"
+      - "5173:5173"
+    volumes:
+      - ./src:/app/src
+      - ./server.js:/app/server.js
+      - ./lavanderia.db:/app/lavanderia.db
+    environment:
+      - NODE_ENV=development
+      - PORT=3001
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin123}
+      - JWT_SECRET=${JWT_SECRET:-mi_clave_secreta_para_desarrollo}
+      - JWT_EXPIRES_IN=24h
+    restart: unless-stopped
+    networks:
+      - lavanderia-network
+
+networks:
+  lavanderia-network:
+    driver: bridge
